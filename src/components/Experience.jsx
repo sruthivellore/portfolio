@@ -36,11 +36,31 @@ function ExpItem({ job, delay }) {
           </div>
           <span className="exp-period">{job.period}</span>
         </div>
-        <ul className="exp-highlights">
-          {job.highlights.map((h, i) => (
-            <li key={i} className="exp-highlight">{h}</li>
-          ))}
-        </ul>
+
+        {job.progression ? (
+          <div className="exp-progression">
+            {job.progression.map((p, i) => (
+              <div key={p.role} className="exp-subrole">
+                <div className="exp-subrole-header">
+                  <span className="exp-subrole-title">{p.role}</span>
+                  <span className="exp-subrole-period">{p.period}</span>
+                </div>
+                <ul className="exp-highlights">
+                  {p.highlights.map((h, j) => (
+                    <li key={j} className="exp-highlight">{h}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <ul className="exp-highlights">
+            {job.highlights.map((h, i) => (
+              <li key={i} className="exp-highlight">{h}</li>
+            ))}
+          </ul>
+        )}
+
         <div className="exp-tech">
           {job.tech.map(t => (
             <span key={t} className="exp-tag">{t}</span>

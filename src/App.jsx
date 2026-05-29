@@ -55,14 +55,36 @@ export const DATA = {
     },
     {
       company: 'Hitachi Vantara',
-      role: 'Software Engineer II → I → Intern',
+      role: 'Intern to Software Engineer II',
       period: 'Sep 2019 – Dec 2023',
       location: 'India',
       current: false,
-      highlights: [
-        'SWE II: Engineered RESTful APIs with Redis session caching; automated SAP monitoring with Python/VBScript saving 1000+ man-hours/yr',
-        'SWE I: Migrated full React codebase to Hooks + TypeScript + MUI v5; built centralized component library as single source of truth',
-        'Intern: Built Java/Kura digital twin streaming fleet telemetry to GCP IoT Core; designed BigQuery + Dataflow analytics pipeline for IIoT',
+      progression: [
+        {
+          role: 'Software Engineer II',
+          period: 'Nov 2022 – Dec 2023',
+          highlights: [
+            'Owned backend API development and authentication using Redis and MySQL; responsible for query optimization and system reliability under peak load',
+            'Led in-house automation team; responsible for SAP system monitoring, alert pipelines, and eliminating 1000+ hrs/yr of manual operational work',
+          ],
+        },
+        {
+          role: 'Software Engineer I',
+          period: 'Nov 2020 – Nov 2022',
+          highlights: [
+            'Responsible for frontend codebase across all UI modules; owned migration from class components to React Hooks, TypeScript, and Material-UI v5',
+            'Owned and maintained the centralized React component library used as the single source of truth across the application',
+            'Responsible for frontend performance: code splitting, lazy loading, caching strategies, and API batching',
+          ],
+        },
+        {
+          role: 'Software Engineer Intern',
+          period: 'Sep 2019 – Jan 2020',
+          highlights: [
+            'Developed a Java/Kura-based digital twin for fleet telematics simulation, responsible for streaming telemetry to GCP IoT Core',
+            'Designed and built the analytics pipeline (BigQuery + Dataflow) for IIoT fleet monitoring and reporting',
+          ],
+        },
       ],
       tech: ['Java', 'Python', 'React', 'TypeScript', 'Redis', 'MySQL', 'GCP', 'BigQuery'],
     },
