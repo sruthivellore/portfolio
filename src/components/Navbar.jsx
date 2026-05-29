@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 const LINKS = [
   { label: 'About',      href: '#about' },
@@ -9,17 +9,21 @@ const LINKS = [
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [active,   setActive]   = useState('hero')
+  const [scrolled,  setScrolled]  = useState(false)
+  const [menuOpen,  setMenuOpen]  = useState(false)
+  const [active,    setActive]    = useState('hero')
+  const [progress,  setProgress]  = useState(0)
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const scrollY = window.scrollY
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight
+      setProgress(maxScroll > 0 ? (scrollY / maxScroll) * 100 : 0)
+      setScrolled(scrollY > 20)
       const sections = LINKS.map(l => l.href.slice(1))
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i])
-        if (el && window.scrollY >= el.offsetTop - 120) {
+        if (el && scrollY >= el.offsetTop - 120) {
           setActive(sections[i])
           break
         }
@@ -68,6 +72,7 @@ export default function Navbar() {
         </button>
       </div>
 
+      <div className="scroll-progress" style={{ width: `${progress}%` }} />
       <div className={`nav-mobile ${menuOpen ? 'nav-mobile-open' : ''}`}>
         {LINKS.map(({ label, href }) => (
           <a

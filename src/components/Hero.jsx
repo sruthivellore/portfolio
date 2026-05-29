@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { DATA } from '../App'
+import { useCountUp } from '../hooks/useCountUp'
 
 export default function Hero() {
   const [copied, setCopied] = useState(false)
@@ -97,28 +98,26 @@ export default function Hero() {
               />
             </div>
             <div className="hero-card-row">
-              <div className="hero-card-sm">
-                <div className="hero-stat">3+</div>
-                <div className="hero-stat-label">Years experience</div>
-              </div>
-              <div className="hero-card-sm">
-                <div className="hero-stat">3.9</div>
-                <div className="hero-stat-label">M.Sc. GPA · NJIT</div>
-              </div>
+              <StatCard target={3} suffix="+" label="Years experience" />
+              <StatCard target={3.9} suffix="" label="M.Sc. GPA · NJIT" />
             </div>
             <div className="hero-card-row">
-              <div className="hero-card-sm">
-                <div className="hero-stat">10+</div>
-                <div className="hero-stat-label">AI integrations</div>
-              </div>
-              <div className="hero-card-sm">
-                <div className="hero-stat">1k+</div>
-                <div className="hero-stat-label">Hours automated</div>
-              </div>
+              <StatCard target={10} suffix="+" label="AI integrations" />
+              <StatCard target={1} suffix="k+" label="Hours automated" />
             </div>
           </div>
         </div>
       </div>
     </section>
+  )
+}
+
+function StatCard({ target, suffix, label }) {
+  const { ref, display } = useCountUp(target, suffix)
+  return (
+    <div ref={ref} className="hero-card-sm">
+      <div className="hero-stat">{display}</div>
+      <div className="hero-stat-label">{label}</div>
+    </div>
   )
 }
