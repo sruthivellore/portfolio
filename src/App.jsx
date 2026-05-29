@@ -118,11 +118,11 @@ export const DATA = {
       color: '#8b5cf6',
     },
     {
-      name: 'Spam Classifier',
-      subtitle: 'ML Text Classification',
-      description: 'Email spam detector comparing 4 models (Multinomial NB, Gaussian NB, Bernoulli NB, Linear SVC). Multinomial NB and Linear SVC both exceeded 98% accuracy with AUC up to 96.9% on a 5,000+ email dataset.',
-      tech: ['Python', 'scikit-learn', 'NLTK', 'Pandas', 'Matplotlib'],
-      github: 'https://github.com/sruthivellore/SpamClassifier',
+      name: 'CineCrate',
+      subtitle: 'Full-Stack Movie Platform',
+      description: 'Movie rental web app with real-time catalog from TMDB API, advanced search and filtering by genre/year/rating, user authentication, rental and return workflows, and a REST API backend. Deployed on Render with PostgreSQL.',
+      tech: ['Django', 'PostgreSQL', 'REST API', 'TMDB API', 'Bootstrap'],
+      github: 'https://github.com/sruthivellore/CineCrate',
       color: '#0ea5e9',
     },
     {
