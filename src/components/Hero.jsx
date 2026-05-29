@@ -14,7 +14,7 @@ export default function Hero() {
             <p className="hero-title">{DATA.title}</p>
             <p className="hero-desc">
               Building complete AI-powered products from concept to production.
-              5+ years shipping full-stack applications, agentic pipelines, and cloud-native systems.
+              3+ years shipping full-stack applications, agentic pipelines, and cloud-native systems.
             </p>
             <div className="hero-actions">
               <a href="#projects" className="btn btn-primary">
@@ -49,21 +49,18 @@ export default function Hero() {
                 <span className="code-dot dot-yellow" />
                 <span className="code-dot dot-green" />
               </div>
-              <pre className="hero-code">{`<span class="cm">// DevAssist pipeline</span>
-<span class="kw">async function</span> <span class="fn">generateFeature</span>(ticket) {
-  <span class="kw">const</span> design = <span class="kw">await</span> <span class="fn">fetchFigma</span>(ticket.figmaUrl)
-  <span class="kw">const</span> analysis = <span class="kw">await</span> <span class="fn">analyzeWithLLM</span>({
-    ticket, design, conventions
-  })
-  <span class="kw">if</span> (analysis.confidence &gt; <span class="str">0.65</span>) {
-    <span class="kw">await</span> <span class="fn">generateAndCommit</span>(analysis)
-    <span class="kw">await</span> <span class="fn">notifyJira</span>(<span class="str">"Branch ready ✓"</span>)
-  }
+              <pre className="hero-code">{`<span class="cm">// what drives me</span>
+<span class="kw">const</span> <span class="fn">passion</span> = {
+  mission:    <span class="str">"turn ideas into shipped products"</span>,
+  approach:   [<span class="str">"design"</span>, <span class="str">"build"</span>, <span class="str">"deploy"</span>, <span class="str">"repeat"</span>],
+  superpower: <span class="str">"AI + full-stack in one person"</span>,
+  exploring:  [<span class="str">"LLMs"</span>, <span class="str">"agentic AI"</span>, <span class="str">"MCP"</span>],
+  openTo:     <span class="str">"great problems &amp; great teams"</span>,
 }`}</pre>
             </div>
             <div className="hero-card-row">
               <div className="hero-card-sm">
-                <div className="hero-stat">5+</div>
+                <div className="hero-stat">3+</div>
                 <div className="hero-stat-label">Years experience</div>
               </div>
               <div className="hero-card-sm">
