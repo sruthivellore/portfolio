@@ -11,10 +11,11 @@ export function useScrollReveal(options = {}) {
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add('revealed')
-          observer.unobserve(el)
+        } else {
+          el.classList.remove('revealed')
         }
       },
-      { threshold: 0.1, ...options }
+      { threshold: 0.12, ...options }
     )
 
     observer.observe(el)

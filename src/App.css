@@ -447,21 +447,25 @@ section { padding: 96px 0; }
 .skill-card:hover .skill-chip { background: rgba(255,255,255,0.08); color: var(--text); }
 
 /* ===== EXPERIENCE ===== */
-:root { --tl-x: 8px; } /* center of timeline line */
+/*
+  Timeline geometry (desktop):
+  - .exp-timeline padding-left: 48px
+  - line: left 15px, width 2px  → center at 16px from timeline-left
+  - dot 14px wide → left-edge at 16-7=9px from timeline → from item: 9-48 = -39px
+*/
 .exp-timeline {
   position: relative;
-  padding-left: 40px;
+  padding-left: 48px;
 }
 .exp-timeline::before {
   content: '';
   position: absolute;
-  left: var(--tl-x);
-  top: 8px;
+  left: 15px;
+  top: 0;
   bottom: 0;
   width: 2px;
   border-radius: 2px;
-  background: linear-gradient(180deg, var(--purple), var(--pink), transparent);
-  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--purple) 0%, var(--pink) 60%, transparent 100%);
 }
 .exp-item {
   position: relative;
@@ -469,19 +473,20 @@ section { padding: 96px 0; }
 }
 .exp-dot {
   position: absolute;
-  left: calc(-40px + var(--tl-x) - 8px); /* center 16px dot on --tl-x */
-  top: 16px;
-  width: 16px; height: 16px;
+  left: -39px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: var(--grad);
-  box-shadow: 0 0 12px rgba(124,58,237,0.6);
-  z-index: 1;
-  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px rgba(124,58,237,0.4);
+  z-index: 2;
 }
 .exp-dot-current {
-  width: 18px; height: 18px;
-  left: calc(-40px + var(--tl-x) - 9px);
-  top: 15px;
+  width: 14px;
+  height: 14px;
+  left: -39px;
+  top: 20px;
   animation: glow-pulse 2s infinite;
 }
 @keyframes glow-pulse {
@@ -693,9 +698,14 @@ footer {
   .project-card-featured { grid-column: span 1; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions .btn { width: 100%; justify-content: center; }
+  /*
+    Mobile: padding-left 32px, line left 9px (center 10px)
+    dot 12px → left-edge at 10-6=4px from timeline → from item: 4-32 = -28px
+  */
   .exp-timeline { padding-left: 32px; }
-  .exp-dot { width: 14px; height: 14px; top: 14px; left: calc(-32px + var(--tl-x) - 7px); }
-  .exp-dot-current { width: 16px; height: 16px; top: 13px; left: calc(-32px + var(--tl-x) - 8px); }
+  .exp-timeline::before { left: 9px; }
+  .exp-dot, .exp-dot-current { width: 12px; height: 12px; left: -28px; top: 18px; }
+  .exp-dot-current { animation: glow-pulse 2s infinite; }
   .ea-grid { grid-template-columns: 1fr; }
   .award-card { flex-wrap: wrap; }
   .award-year { margin-left: 0; }
