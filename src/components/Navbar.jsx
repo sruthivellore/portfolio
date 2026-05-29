@@ -1,45 +1,89 @@
 import { useState, useEffect } from 'react'
 import { DATA } from '../App'
 
+const LINKS = [
+  { label: 'About',      href: '#hero' },
+  { label: 'Skills',     href: '#skills' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects',   href: '#projects' },
+  { label: 'Education',  href: '#education' },
+]
+
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled]   = useState(false)
+  const [menuOpen, setMenuOpen]   = useState(false)
+  const [active,   setActive]     = useState('hero')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20)
+
+      const sections = LINKS.map(l => l.href.slice(1))
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i])
+        if (el && window.scrollY >= el.offsetTop - 120) {
+          setActive(sections[i])
+          break
+        }
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const links = ['About', 'Skills', 'Experience', 'Projects', 'Education']
+  const handleClick = (href) => {
+    setMenuOpen(false)
+    const id = href.slice(1)
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-inner">
-        <a href="#hero" className="nav-logo">SV</a>
+        <a href="#hero" className="nav-logo" onClick={e => { e.preventDefault(); handleClick('#hero') }}>SV</a>
+
         <ul className="nav-links">
-          {links.map(l => (
-            <li key={l}>
-              <a href={`#${l.toLowerCase()}`} className="nav-link">{l}</a>
+          {LINKS.map(({ label, href }) => (
+            <li key={label}>
+              <a
+                href={href}
+                className={`nav-link ${active === href.slice(1) ? 'nav-link-active' : ''}`}
+                onClick={e => { e.preventDefault(); handleClick(href) }}
+              >
+                {label}
+              </a>
             </li>
           ))}
           <li>
             <a href={`mailto:${DATA.email}`} className="nav-cta">Hire Me</a>
           </li>
         </ul>
-        <button className="nav-hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+
+        <button
+          className={`nav-hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Toggle menu"
+        >
           <span /><span /><span />
         </button>
       </div>
-      {menuOpen && (
-        <div style={{ background: 'rgba(8,8,15,0.97)', borderTop: '1px solid var(--border)', padding: '16px 24px', backdropFilter: 'blur(20px)' }}>
-          {links.map(l => (
-            <a key={l} href={`#${l.toLowerCase()}`} className="nav-link" style={{ display: 'block', padding: '12px 0' }} onClick={() => setMenuOpen(false)}>
-              {l}
-            </a>
-          ))}
-        </div>
-      )}
+
+      <div className={`nav-mobile ${menuOpen ? 'nav-mobile-open' : ''}`}>
+        {LINKS.map(({ label, href }) => (
+          <a
+            key={label}
+            href={href}
+            className="nav-mobile-link"
+            onClick={e => { e.preventDefault(); handleClick(href) }}
+          >
+            {label}
+          </a>
+        ))}
+        <a href={`mailto:${DATA.email}`} className="nav-cta" style={{ marginTop: 8, display: 'inline-block' }}>
+          Hire Me
+        </a>
+      </div>
     </nav>
   )
 }
