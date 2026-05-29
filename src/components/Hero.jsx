@@ -49,14 +49,19 @@ export default function Hero() {
                 <span className="code-dot dot-yellow" />
                 <span className="code-dot dot-green" />
               </div>
-              <pre className="hero-code">{`<span class="cm">// what drives me</span>
+              <pre
+                className="hero-code"
+                dangerouslySetInnerHTML={{ __html:
+`<span class="cm">// what drives me</span>
 <span class="kw">const</span> <span class="fn">passion</span> = {
   mission:    <span class="str">"turn ideas into shipped products"</span>,
   approach:   [<span class="str">"design"</span>, <span class="str">"build"</span>, <span class="str">"deploy"</span>, <span class="str">"repeat"</span>],
   superpower: <span class="str">"AI + full-stack in one person"</span>,
   exploring:  [<span class="str">"LLMs"</span>, <span class="str">"agentic AI"</span>, <span class="str">"MCP"</span>],
   openTo:     <span class="str">"great problems &amp; great teams"</span>,
-}`}</pre>
+}`
+                }}
+              />
             </div>
             <div className="hero-card-row">
               <div className="hero-card-sm">

@@ -369,7 +369,8 @@ section { padding: 96px 0; }
 }
 .hero-stat { font-size: 2rem; font-weight: 800; background: var(--grad-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .hero-stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-.hero-code { font-family: var(--mono); font-size: 12px; color: var(--text-soft); line-height: 1.6; }
+.hero-code { font-family: var(--mono); font-size: 12px; color: var(--text-soft); line-height: 1.6; white-space: pre-wrap; word-break: break-word; overflow: hidden; display: block; }
+.hero-card-big { overflow: hidden; }
 .hero-code .kw { color: #c792ea; }
 .hero-code .fn { color: #82aaff; }
 .hero-code .str { color: #c3e88d; }
@@ -652,6 +653,7 @@ footer {
   .container { padding: 0 16px; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+  .nav-cta { display: none; }
   .nav-mobile { display: flex; }
   .skills-grid { grid-template-columns: 1fr; }
   .projects-bento { grid-template-columns: 1fr; }
