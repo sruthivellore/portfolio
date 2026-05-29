@@ -701,9 +701,22 @@ section { padding: 96px 0; }
 }
 .edu-school { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
 .edu-degree { font-size: 13px; color: var(--purple-light); font-weight: 600; margin-bottom: 12px; }
-.edu-period-bar { display: flex; align-items: center; gap: 8px; }
+.edu-period-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
 .edu-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--grad); flex-shrink: 0; }
 .edu-meta { font-size: 12px; color: var(--text-muted); font-family: var(--mono); }
+.edu-courses { display: flex; flex-wrap: wrap; gap: 6px; }
+.edu-course-chip {
+  padding: 3px 10px; border-radius: 6px;
+  font-size: 11px; font-weight: 500;
+  background: rgba(124,58,237,0.08);
+  color: var(--purple-light);
+  border: 1px solid rgba(124,58,237,0.18);
+  transition: all 0.2s;
+}
+.edu-card:hover .edu-course-chip {
+  background: rgba(124,58,237,0.14);
+  border-color: rgba(124,58,237,0.3);
+}
 
 /* Awards */
 .awards-col { display: flex; flex-direction: column; gap: 14px; }

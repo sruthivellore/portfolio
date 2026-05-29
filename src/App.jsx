@@ -166,8 +166,22 @@ export const DATA = {
   ],
 
   education: [
-    { school: 'New Jersey Institute of Technology', degree: 'M.Sc. Computer Science', period: '2024 – 2025', gpa: '3.9 / 4.0', flag: '🇺🇸' },
-    { school: 'JNTU Hyderabad', degree: 'B.E. Computer Science', period: '2016 – 2020', gpa: '8.0 / 10', flag: '🇮🇳' },
+    {
+      school: 'New Jersey Institute of Technology',
+      degree: 'M.Sc. Computer Science',
+      period: '2024 – 2025',
+      gpa: '3.9 / 4.0',
+      flag: '🇺🇸',
+      courses: ['Machine Learning', 'Deep Learning', 'Artificial Intelligence', 'Data Structures & Algorithms', 'Cloud Computing', 'Data Management Systems', 'Web Systems Development', 'Internet Protocols'],
+    },
+    {
+      school: 'JNTU Hyderabad',
+      degree: 'B.E. Computer Science',
+      period: '2016 – 2020',
+      gpa: '8.0 / 10',
+      flag: '🇮🇳',
+      courses: ['Design & Analysis of Algorithms', 'Operating Systems', 'Database Management', 'Cryptography & Network Security', 'Data Mining', 'Cloud Computing', 'Web Technologies', 'Compiler Design'],
+    },
   ],
 
   awards: [

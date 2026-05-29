@@ -46,6 +46,13 @@ function EduCard({ edu, delay }) {
         <span className="edu-dot" />
         <span className="edu-meta">{edu.period}</span>
       </div>
+      {edu.courses && (
+        <div className="edu-courses">
+          {edu.courses.map(c => (
+            <span key={c} className="edu-course-chip">{c}</span>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
