@@ -19,11 +19,11 @@ export const DATA = {
   github: 'https://github.com/sruthivellore',
 
   skills: [
-    { category: 'Languages',        icon: '{ }', color: '#38bdf8', items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'Shell'] },
+    { category: 'Languages',        icon: '{ }', color: '#38bdf8', items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C', 'SQL', 'Shell scripting'] },
     { category: 'Frameworks',       icon: '⚛',   color: '#34d399', items: ['React', 'Node.js', 'Spring Boot', 'Gradio', 'Material-UI', 'REST'] },
     { category: 'AI / ML',          icon: '🤖',  color: '#a78bfa', items: ['LLM Orchestration', 'Prompt Engineering', 'Agentic AI', 'MCP', 'OpenAI Whisper', 'Intent Classification'] },
     { category: 'Databases',        icon: '🗄',  color: '#fb923c', items: ['MongoDB', 'MySQL', 'PostgreSQL', 'Redis', 'Oracle', 'Hyperledger Fabric'] },
-    { category: 'Cloud & DevOps',   icon: '☁',  color: '#22d3ee', items: ['AWS (S3, ECR, EC2)', 'GCP', 'Docker', 'GitLab CI/CD', 'Jenkins', 'Trivy'] },
+    { category: 'Cloud & DevOps',   icon: '☁',  color: '#22d3ee', items: ['AWS', 'GCP', 'Docker', 'GitLab CI/CD', 'Jenkins', 'Trivy'] },
     { category: 'Integrations',     icon: '🔌',  color: '#f472b6', items: ['Gmail API', 'Google Calendar', 'Zoom API', 'OAuth 2.0', 'Figma API', 'Jira API'] },
   ],
 

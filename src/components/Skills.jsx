@@ -31,7 +31,6 @@ function SkillCard({ group, index, delay }) {
       ref={ref}
       className={`skill-card reveal reveal-delay-${delay}`}
       style={{ '--skill-color': group.color }}
-      data-index={num}
     >
       <div className="skill-card-header">
         <div className="skill-icon">{group.icon}</div>
