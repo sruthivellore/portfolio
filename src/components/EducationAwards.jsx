@@ -11,18 +11,22 @@ export default function EducationAwards() {
           <span className="section-label">Background</span>
           <h2 className="section-title">Education & <span className="gradient-text">Awards</span></h2>
         </div>
-        <div className="ea-grid">
-          <div className="edu-col">
+        <div className="ea-wrap">
+          <div className="ea-degrees-row">
             <p className="ea-sub-label">Degrees</p>
-            {DATA.education.map((edu, i) => (
-              <EduCard key={edu.school} edu={edu} delay={i + 1} />
-            ))}
+            <div className="edu-col">
+              {DATA.education.map((edu, i) => (
+                <EduCard key={edu.school} edu={edu} delay={i + 1} />
+              ))}
+            </div>
           </div>
-          <div className="awards-col">
+          <div className="ea-awards-row">
             <p className="ea-sub-label">Recognition</p>
-            {DATA.awards.map((award, i) => (
-              <AwardCard key={award.title} award={award} delay={i + 1} />
-            ))}
+            <div className="awards-col">
+              {DATA.awards.map((award, i) => (
+                <AwardCard key={award.title} award={award} delay={i + 1} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
