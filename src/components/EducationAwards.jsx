@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+import confetti from 'canvas-confetti'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { DATA } from '../App'
 
@@ -36,8 +38,32 @@ export default function EducationAwards() {
 
 function EduCard({ edu, delay }) {
   const ref = useScrollReveal()
+  const fired = useRef(false)
+
+  const handleHover = () => {
+    if (fired.current) return
+    fired.current = true
+    setTimeout(() => { fired.current = false }, 3000)
+
+    const rect = ref.current?.getBoundingClientRect()
+    if (!rect) return
+    const x = (rect.left + rect.width / 2) / window.innerWidth
+    const y = (rect.top + rect.height / 3) / window.innerHeight
+
+    confetti({
+      particleCount: 80,
+      spread: 70,
+      origin: { x, y },
+      colors: ['#a78bfa', '#f472b6', '#38bdf8', '#34d399', '#fbbf24'],
+      startVelocity: 30,
+      gravity: 0.8,
+      scalar: 0.9,
+      ticks: 200,
+    })
+  }
+
   return (
-    <div ref={ref} className={`edu-card reveal reveal-delay-${delay}`}>
+    <div ref={ref} className={`edu-card reveal reveal-delay-${delay}`} onMouseEnter={handleHover}>
       <div className="edu-card-top">
         <div className="edu-flag-wrap">
           <span className="edu-flag">{edu.flag}</span>
