@@ -447,35 +447,39 @@ section { padding: 96px 0; }
 .skill-card:hover .skill-chip { background: rgba(255,255,255,0.08); color: var(--text); }
 
 /* ===== EXPERIENCE ===== */
-.exp-timeline { position: relative; }
+.exp-timeline {
+  position: relative;
+  padding-left: 36px;
+}
 .exp-timeline::before {
   content: '';
   position: absolute;
-  left: 20px;
-  top: 0; bottom: 0;
-  width: 1px;
+  left: 7px;
+  top: 6px;
+  bottom: 0;
+  width: 2px;
+  border-radius: 2px;
   background: linear-gradient(180deg, var(--purple), var(--pink), transparent);
 }
 .exp-item {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 24px;
-  margin-bottom: 32px;
+  position: relative;
+  margin-bottom: 28px;
 }
 .exp-dot {
-  width: 12px; height: 12px;
+  position: absolute;
+  left: -43px;
+  top: 16px;
+  width: 16px; height: 16px;
   border-radius: 50%;
   background: var(--grad);
-  margin-top: 6px;
-  margin-left: 8px;
   box-shadow: 0 0 12px rgba(124,58,237,0.6);
-  flex-shrink: 0;
-  position: relative;
   z-index: 1;
+  border: 2px solid var(--bg);
 }
 .exp-dot-current {
-  width: 14px; height: 14px;
-  margin-left: 7px;
+  width: 18px; height: 18px;
+  left: -44px;
+  top: 15px;
   animation: glow-pulse 2s infinite;
 }
 @keyframes glow-pulse {
@@ -687,9 +691,10 @@ footer {
   .project-card-featured { grid-column: span 1; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions .btn { width: 100%; justify-content: center; }
-  .exp-timeline::before { display: none; }
-  .exp-item { grid-template-columns: 1fr; }
-  .exp-dot { display: none; }
+  .exp-timeline { padding-left: 28px; }
+  .exp-timeline::before { left: 5px; }
+  .exp-dot { left: -34px; width: 14px; height: 14px; top: 14px; }
+  .exp-dot-current { left: -35px; width: 16px; height: 16px; top: 13px; }
   .ea-grid { grid-template-columns: 1fr; }
   .award-card { flex-wrap: wrap; }
   .award-year { margin-left: 0; }

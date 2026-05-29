@@ -35,7 +35,7 @@ export const DATA = {
       location: 'Boca Raton, FL',
       current: true,
       highlights: [
-        'Built DevAssist: project-agnostic AI pipeline (Jira + Figma → conformant code) with confidence gating, prompt caching, and LLM fallback — cutting feature setup from hours to ~5 min',
+        'Built DevAssist: project-agnostic AI pipeline (Jira + Figma to conformant code) with confidence gating, prompt caching, and LLM fallback, cutting feature setup from hours to ~5 min',
         'Replaced 100% manual EC2 deployments with GitLab CI/CD across 4 environments; added Gitleaks, ESLint, Trivy gates; migrated frontend to AWS S3 + CloudFront',
         'Contributed to containerized case management platform with React, Node.js, MongoDB, Hyperledger Fabric via Docker Compose + Jenkins',
       ],

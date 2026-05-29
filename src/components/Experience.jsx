@@ -26,9 +26,7 @@ function ExpItem({ job, delay }) {
   const ref = useScrollReveal()
   return (
     <div ref={ref} className={`exp-item reveal reveal-delay-${Math.min(delay, 4)}`}>
-      <div>
-        <div className={`exp-dot ${job.current ? 'exp-dot-current' : ''}`} />
-      </div>
+      <div className={`exp-dot ${job.current ? 'exp-dot-current' : ''}`} />
       <div className="exp-card">
         <div className="exp-header">
           <div>
