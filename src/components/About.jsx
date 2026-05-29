@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { DATA } from '../App'
 
 export default function About() {
   const ref = useScrollReveal()
+  const [copied, setCopied] = useState(false)
+
+  const handleTalk = (e) => {
+    e.preventDefault()
+    navigator.clipboard.writeText(DATA.email).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2500)
+    })
+  }
 
   return (
     <section id="about">
@@ -28,10 +38,19 @@ export default function About() {
               Always curious about what's next in agentic AI and the Model Context Protocol.
               Open to teams that care about craft and want to move fast without cutting corners.
             </p>
-            <a href={`mailto:${DATA.email}`} className="btn btn-primary about-cta">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Let's talk
-            </a>
+            <button onClick={handleTalk} className={`btn about-cta ${copied ? 'contact-copied' : 'btn-primary'}`}>
+              {copied ? (
+                <>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Email copied!
+                </>
+              ) : (
+                <>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  Let's talk
+                </>
+              )}
+            </button>
           </div>
           <div className="about-cards">
             <AboutCard delay={1} emoji="✈️" title="Background" text="Hyderabad, India to Jersey City, NJ. Software built across two continents." />
