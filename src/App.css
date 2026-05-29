@@ -532,7 +532,6 @@ section { padding: 96px 0; }
 .projects-bento {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
   gap: 16px;
 }
 .project-card {
@@ -558,7 +557,6 @@ section { padding: 96px 0; }
 }
 .project-card:hover { background: var(--glass-hover); border-color: var(--border-hover); transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
 .project-card:hover::before { opacity: 1; }
-.project-card-featured { grid-column: span 2; }
 .project-icon {
   width: 44px; height: 44px;
   border-radius: 12px;
@@ -671,8 +669,7 @@ footer {
 @media (max-width: 1024px) {
   .hero-inner { gap: 40px; }
   .projects-bento { grid-template-columns: 1fr 1fr; }
-  .project-card-featured { grid-column: span 2; }
-}
+  }
 
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -681,8 +678,7 @@ footer {
   .hero-code { font-size: 11px; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-bento { grid-template-columns: 1fr 1fr; }
-  .project-card-featured { grid-column: span 2; }
-  .ea-grid { grid-template-columns: 1fr; }
+    .ea-grid { grid-template-columns: 1fr; }
   .exp-header { flex-direction: column; align-items: flex-start; }
 }
 
