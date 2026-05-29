@@ -172,6 +172,7 @@ export const DATA = {
       period: '2024 – 2025',
       gpa: '3.9 / 4.0',
       flag: '🇺🇸',
+      location: 'Newark, NJ',
       courses: ['Machine Learning', 'Deep Learning', 'Artificial Intelligence', 'Data Structures & Algorithms', 'Cloud Computing', 'Data Management Systems', 'Web Systems Development', 'Internet Protocols'],
     },
     {
@@ -180,6 +181,7 @@ export const DATA = {
       period: '2016 – 2020',
       gpa: '8.0 / 10',
       flag: '🇮🇳',
+      location: 'Hyderabad, India',
       courses: ['Design & Analysis of Algorithms', 'Operating Systems', 'Database Management', 'Cryptography & Network Security', 'Data Mining', 'Cloud Computing', 'Web Technologies', 'Compiler Design'],
     },
   ],

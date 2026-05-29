@@ -45,6 +45,7 @@ function EduCard({ edu, delay }) {
       <div className="edu-period-bar">
         <span className="edu-dot" />
         <span className="edu-meta">{edu.period}</span>
+        {edu.location && <><span className="edu-sep">·</span><span className="edu-meta">📍 {edu.location}</span></>}
       </div>
       {edu.courses && (
         <div className="edu-courses">

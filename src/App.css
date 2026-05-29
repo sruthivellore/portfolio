@@ -704,6 +704,7 @@ section { padding: 96px 0; }
 .edu-period-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
 .edu-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--grad); flex-shrink: 0; }
 .edu-meta { font-size: 12px; color: var(--text-muted); font-family: var(--mono); }
+.edu-sep { font-size: 12px; color: var(--text-muted); }
 .edu-courses { display: flex; flex-wrap: wrap; gap: 6px; }
 .edu-course-chip {
   padding: 3px 10px; border-radius: 6px;
