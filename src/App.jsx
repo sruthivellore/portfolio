@@ -72,7 +72,7 @@ export const DATA = {
     {
       name: 'MemoMate',
       subtitle: 'AI Productivity Assistant',
-      description: 'Full-stack platform integrating Gmail & Google Calendar. Read, compose, send, reply, and AI-draft emails; create meetings with Meet links; transcribe and summarize notes; extract tasks — with multi-provider AI (OpenAI, Gemini, Groq) and AES-256-GCM key storage.',
+      description: 'Full-stack platform integrating Gmail & Google Calendar. Read, compose, send, reply, and AI-draft emails; create meetings with Meet links; transcribe and summarize notes; extract tasks, all with a multi-provider AI backend (OpenAI, Gemini, Groq) and AES-256-GCM key storage.',
       tech: ['React 18', 'Node.js', 'MongoDB', 'Docker', 'AWS ECR', 'GitLab CI'],
       github: 'https://github.com/sruthivellore',
       featured: true,

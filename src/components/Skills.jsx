@@ -10,7 +10,7 @@ export default function Skills() {
         <div ref={ref} className="reveal">
           <span className="section-label">Tech Stack</span>
           <h2 className="section-title">What I <span className="gradient-text">work with</span></h2>
-          <p className="section-sub">A broad stack built across 5+ years of production engineering, AI development, and cloud infrastructure.</p>
+          <p className="section-sub">A broad stack built across 3+ years of production engineering, AI development, and cloud infrastructure.</p>
         </div>
         <div className="skills-grid">
           {DATA.skills.map((group, i) => (

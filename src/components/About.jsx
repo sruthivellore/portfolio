@@ -19,7 +19,7 @@ export default function About() {
       <div className="container">
         <div ref={ref} className="reveal">
           <span className="section-label">About Me</span>
-          <h2 className="section-title">The person <span className="gradient-text">behind the code</span></h2>
+          <h2 className="section-title">A little <span className="gradient-text">about me</span></h2>
         </div>
         <div className="about-grid">
           <div className="about-text reveal" ref={useScrollReveal()}>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { DATA } from '../App'
 
 const LINKS = [
   { label: 'About',      href: '#about' },
@@ -10,14 +9,13 @@ const LINKS = [
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled]   = useState(false)
-  const [menuOpen, setMenuOpen]   = useState(false)
-  const [active,   setActive]     = useState('hero')
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [active,   setActive]   = useState('hero')
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20)
-
       const sections = LINKS.map(l => l.href.slice(1))
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i])
@@ -33,8 +31,7 @@ export default function Navbar() {
 
   const handleClick = (href) => {
     setMenuOpen(false)
-    const id = href.slice(1)
-    const el = document.getElementById(id)
+    const el = document.getElementById(href.slice(1))
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -55,9 +52,6 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li>
-            <a href={`mailto:${DATA.email}`} className="nav-cta">Hire Me</a>
-          </li>
         </ul>
 
         <button
@@ -80,9 +74,6 @@ export default function Navbar() {
             {label}
           </a>
         ))}
-        <a href={`mailto:${DATA.email}`} className="nav-cta" style={{ marginTop: 8, display: 'inline-block' }}>
-          Hire Me
-        </a>
       </div>
     </nav>
   )
