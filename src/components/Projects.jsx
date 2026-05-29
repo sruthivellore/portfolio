@@ -7,6 +7,10 @@ const ICONS = {
   'YoGo Social': '🌐',
   'PHP Dataset Pipeline': '🔬',
   'Driver License Extraction': '🪪',
+  'Hand Gesture Mouse': '✋',
+  'CineCrate': '🎬',
+  'Handwritten Character Recognition': '✍️',
+  'Energy Consumption Forecasting': '🔋',
 }
 
 export default function Projects() {
