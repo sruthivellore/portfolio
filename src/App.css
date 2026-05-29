@@ -666,7 +666,8 @@ footer {
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
+  .hero-visual { width: 100%; }
+  .hero-code { font-size: 11px; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-bento { grid-template-columns: 1fr 1fr; }
   .project-card-featured { grid-column: span 2; }
