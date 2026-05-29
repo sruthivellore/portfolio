@@ -188,6 +188,7 @@ section { padding: 96px 0; }
   backdrop-filter: blur(8px);
 }
 .btn-outline:hover { background: var(--glass-hover); border-color: rgba(255,255,255,0.3); transform: translateY(-1px); }
+.contact-copied { background: rgba(16,185,129,0.15) !important; border-color: rgba(16,185,129,0.4) !important; color: #6ee7b7 !important; }
 
 /* ===== NAVBAR ===== */
 .navbar {

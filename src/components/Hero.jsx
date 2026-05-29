@@ -1,6 +1,17 @@
+import { useState } from 'react'
 import { DATA } from '../App'
 
 export default function Hero() {
+  const [copied, setCopied] = useState(false)
+
+  const handleContact = (e) => {
+    e.preventDefault()
+    navigator.clipboard.writeText(DATA.email).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2500)
+    })
+  }
+
   return (
     <section id="hero">
       <div className="container">
@@ -17,14 +28,23 @@ export default function Hero() {
               3+ years shipping full-stack applications, agentic pipelines, and cloud-native systems.
             </p>
             <div className="hero-actions">
-              <a href="#projects" className="btn btn-primary">
+              <a href="#projects" className="btn btn-primary" onClick={e => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 View Projects
               </a>
-              <a href={`mailto:${DATA.email}`} className="btn btn-outline">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Contact Me
-              </a>
+              <button className={`btn btn-outline contact-btn ${copied ? 'contact-copied' : ''}`} onClick={handleContact}>
+                {copied ? (
+                  <>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Email Copied!
+                  </>
+                ) : (
+                  <>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Contact Me
+                  </>
+                )}
+              </button>
             </div>
             <div className="hero-socials">
               <a href={DATA.linkedin} target="_blank" rel="noopener" className="social-icon" title="LinkedIn">
@@ -35,9 +55,6 @@ export default function Hero() {
               </a>
               <a href={`mailto:${DATA.email}`} className="social-icon" title="Email">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </a>
-              <a href={`tel:${DATA.phone}`} className="social-icon" title="Phone">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </a>
             </div>
           </div>
