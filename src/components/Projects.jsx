@@ -26,7 +26,7 @@ export default function Projects() {
         </div>
         <div className="projects-bento">
           {DATA.projects.map((p, i) => (
-            <ProjectCard key={p.name} project={p} delay={i + 1} />
+            <ProjectCard key={p.name} project={p} index={i + 1} delay={(i % 3) + 1} />
           ))}
         </div>
       </div>
@@ -34,15 +34,18 @@ export default function Projects() {
   )
 }
 
-function ProjectCard({ project, delay }) {
+function ProjectCard({ project, index, delay }) {
   const ref = useScrollReveal()
+  const num = String(index).padStart(2, '0')
+
   return (
     <div
       ref={ref}
-      className={`project-card reveal reveal-delay-${Math.min(delay, 4)}`}
+      className={`project-card reveal reveal-delay-${delay}`}
       style={{ '--card-accent': project.color }}
+      data-index={num}
     >
-      <div className="project-icon" style={{ background: `${project.color}18`, borderColor: `${project.color}30` }}>
+      <div className="project-icon">
         {ICONS[project.name] || '🔧'}
       </div>
       <div className="project-name">{project.name}</div>
@@ -50,7 +53,7 @@ function ProjectCard({ project, delay }) {
       <p className="project-desc">{project.description}</p>
       <div className="project-footer">
         <div className="project-tech">
-          {project.tech.slice(0, project.featured ? 6 : 4).map(t => (
+          {project.tech.slice(0, 4).map(t => (
             <span key={t} className="project-tech-tag">{t}</span>
           ))}
         </div>
