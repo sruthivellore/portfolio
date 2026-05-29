@@ -14,23 +14,19 @@ export default function About() {
         <div className="about-grid">
           <div className="about-text reveal" ref={useScrollReveal()}>
             <p>
-              I'm a software engineer based in Jersey City, NJ — originally from Hyderabad, India.
-              After spending four years at Hitachi Vantara building enterprise platforms and leading automation
-              teams, I moved to the US to pursue my Master's in Computer Science at NJIT, graduating with a 3.9 GPA.
+              Originally from Hyderabad, India, I moved to the US for my Master's in CS at NJIT and
+              never looked back. Before that, four years at Hitachi Vantara shipping enterprise software,
+              leading automation teams, and getting comfortable with production-grade systems at scale.
             </p>
             <p>
-              I'm obsessed with AI-powered products — the kind that actually ship, handle real edge cases,
-              and make people's work meaningfully faster. Not prototypes. Not demos. Things that run in production
-              with proper CI/CD, security scanning, and monitoring behind them.
+              What gets me out of bed is building things that actually work in the real world. Not
+              prototypes. Full products, with CI/CD, security gates, observability, and a real user at
+              the end of it. That's why I gravitate toward AI tooling: the gap between a cool demo and
+              something reliable is exactly where the interesting engineering happens.
             </p>
             <p>
-              Currently I'm at Circle Software building agentic developer tooling and cloud infrastructure.
-              On the side I built MemoMate, a full-stack AI productivity assistant that connects Gmail,
-              Google Calendar, and multiple LLM providers — because I wanted to scratch my own itch.
-            </p>
-            <p>
-              When I'm not shipping code, I'm exploring what's next in LLMs, agentic systems, and the
-              Model Context Protocol. Always open to challenging problems and teams that care about craft.
+              Always curious about what's next in agentic AI and the Model Context Protocol.
+              Open to teams that care about craft and want to move fast without cutting corners.
             </p>
             <a href={`mailto:${DATA.email}`} className="btn btn-primary about-cta">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
