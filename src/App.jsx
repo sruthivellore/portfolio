@@ -109,7 +109,7 @@ export const DATA = {
     },
     {
       name: 'YoGo Social',
-      subtitle: 'Serverless Event Platform',
+      subtitle: 'Capstone — Serverless Event Platform',
       description: 'Led 4-person team to deliver government-grade AWS serverless backend (Lambda, DynamoDB, AppSync/GraphQL, Cognito). 96% sprint completion, 1.8% defect rate, OWASP Top 10 compliant, 150+ concurrent DynamoDB writes at 0% throttle.',
       tech: ['AWS Lambda', 'DynamoDB', 'GraphQL', 'Cognito', 'TypeScript'],
       github: null,
