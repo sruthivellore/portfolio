@@ -29,7 +29,7 @@ export default function Hero() {
           <div>
             <div className="hero-badge">
               <span className="hero-badge-dot" />
-              Available for new opportunities
+              Currently building at Circle Software
             </div>
             <h1 className="hero-name">{DATA.shortName}<br />Vellore</h1>
             <p className="hero-title">{DATA.title}</p>
@@ -92,7 +92,7 @@ export default function Hero() {
   approach:   [<span class="str">"design"</span>, <span class="str">"build"</span>, <span class="str">"deploy"</span>, <span class="str">"repeat"</span>],
   superpower: <span class="str">"AI + full-stack in one person"</span>,
   exploring:  [<span class="str">"LLMs"</span>, <span class="str">"agentic AI"</span>, <span class="str">"MCP"</span>],
-  openTo:     <span class="str">"great problems &amp; great teams"</span>,
+  currentlyAt:<span class="str">"Circle Software"</span>,
 }`
                 }}
               />

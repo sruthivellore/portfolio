@@ -36,7 +36,8 @@ export default function About() {
             </p>
             <p>
               Always curious about what's next in agentic AI and the Model Context Protocol.
-              Open to teams that care about craft and want to move fast without cutting corners.
+              When I'm not shipping at Circle Software, I'm building personal tools and exploring
+              what LLMs can do when you go past the demo.
             </p>
             <button onClick={handleTalk} className={`btn about-cta ${copied ? 'contact-copied' : 'btn-primary'}`}>
               {copied ? (
