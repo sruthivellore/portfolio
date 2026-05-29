@@ -447,19 +447,21 @@ section { padding: 96px 0; }
 .skill-card:hover .skill-chip { background: rgba(255,255,255,0.08); color: var(--text); }
 
 /* ===== EXPERIENCE ===== */
+:root { --tl-x: 8px; } /* center of timeline line */
 .exp-timeline {
   position: relative;
-  padding-left: 36px;
+  padding-left: 40px;
 }
 .exp-timeline::before {
   content: '';
   position: absolute;
-  left: 7px;
-  top: 6px;
+  left: var(--tl-x);
+  top: 8px;
   bottom: 0;
   width: 2px;
   border-radius: 2px;
   background: linear-gradient(180deg, var(--purple), var(--pink), transparent);
+  transform: translateX(-50%);
 }
 .exp-item {
   position: relative;
@@ -467,7 +469,7 @@ section { padding: 96px 0; }
 }
 .exp-dot {
   position: absolute;
-  left: -43px;
+  left: calc(-40px + var(--tl-x) - 8px); /* center 16px dot on --tl-x */
   top: 16px;
   width: 16px; height: 16px;
   border-radius: 50%;
@@ -478,7 +480,7 @@ section { padding: 96px 0; }
 }
 .exp-dot-current {
   width: 18px; height: 18px;
-  left: -44px;
+  left: calc(-40px + var(--tl-x) - 9px);
   top: 15px;
   animation: glow-pulse 2s infinite;
 }
@@ -691,10 +693,9 @@ footer {
   .project-card-featured { grid-column: span 1; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions .btn { width: 100%; justify-content: center; }
-  .exp-timeline { padding-left: 28px; }
-  .exp-timeline::before { left: 5px; }
-  .exp-dot { left: -34px; width: 14px; height: 14px; top: 14px; }
-  .exp-dot-current { left: -35px; width: 16px; height: 16px; top: 13px; }
+  .exp-timeline { padding-left: 32px; }
+  .exp-dot { width: 14px; height: 14px; top: 14px; left: calc(-32px + var(--tl-x) - 7px); }
+  .exp-dot-current { width: 16px; height: 16px; top: 13px; left: calc(-32px + var(--tl-x) - 8px); }
   .ea-grid { grid-template-columns: 1fr; }
   .award-card { flex-wrap: wrap; }
   .award-year { margin-left: 0; }

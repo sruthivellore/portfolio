@@ -30,9 +30,14 @@ export default function Navbar() {
   }, [])
 
   const handleClick = (href) => {
+    const wasOpen = menuOpen
     setMenuOpen(false)
-    const el = document.getElementById(href.slice(1))
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    const scroll = () => {
+      const el = document.getElementById(href.slice(1))
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+    // Delay scroll until mobile menu animation finishes (350ms)
+    wasOpen ? setTimeout(scroll, 380) : scroll()
   }
 
   return (
