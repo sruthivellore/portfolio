@@ -12,15 +12,14 @@ export default function EducationAwards() {
           <h2 className="section-title">Education & <span className="gradient-text">Awards</span></h2>
         </div>
         <div className="ea-grid">
-          <div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-              {DATA.education.map((edu, i) => (
-                <EduCard key={edu.school} edu={edu} delay={i + 1} />
-              ))}
-            </div>
+          <div className="edu-col">
+            <p className="ea-sub-label">Degrees</p>
+            {DATA.education.map((edu, i) => (
+              <EduCard key={edu.school} edu={edu} delay={i + 1} />
+            ))}
           </div>
           <div className="awards-col">
-            <p style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', fontWeight: 600, marginBottom: 12 }}>Recognition</p>
+            <p className="ea-sub-label">Recognition</p>
             {DATA.awards.map((award, i) => (
               <AwardCard key={award.title} award={award} delay={i + 1} />
             ))}
@@ -35,11 +34,18 @@ function EduCard({ edu, delay }) {
   const ref = useScrollReveal()
   return (
     <div ref={ref} className={`edu-card reveal reveal-delay-${delay}`}>
-      <div className="edu-flag">{edu.flag}</div>
+      <div className="edu-card-top">
+        <div className="edu-flag-wrap">
+          <span className="edu-flag">{edu.flag}</span>
+        </div>
+        <div className="edu-gpa-badge">GPA {edu.gpa}</div>
+      </div>
       <div className="edu-school">{edu.school}</div>
       <div className="edu-degree">{edu.degree}</div>
-      <div className="edu-meta">{edu.period}</div>
-      <span className="edu-gpa">GPA {edu.gpa}</span>
+      <div className="edu-period-bar">
+        <span className="edu-dot" />
+        <span className="edu-meta">{edu.period}</span>
+      </div>
     </div>
   )
 }
@@ -48,8 +54,10 @@ function AwardCard({ award, delay }) {
   const ref = useScrollReveal()
   return (
     <div ref={ref} className={`award-card reveal reveal-delay-${delay}`}>
-      <span className="award-icon">🏆</span>
-      <div>
+      <div className="award-icon-wrap">
+        <span className="award-icon">🏆</span>
+      </div>
+      <div className="award-body">
         <div className="award-title">{award.title}</div>
         <div className="award-detail">{award.detail} · Hitachi Vantara</div>
       </div>
