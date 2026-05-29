@@ -15,7 +15,7 @@ export default function About() {
           <div className="about-text reveal" ref={useScrollReveal()}>
             <p>
               Originally from Hyderabad, India, I moved to the US for my Master's in CS at NJIT and
-              never looked back. Before that, four years at Hitachi Vantara shipping enterprise software,
+              never looked back. Before that, three years at Hitachi Vantara shipping enterprise software,
               leading automation teams, and getting comfortable with production-grade systems at scale.
             </p>
             <p>
@@ -34,10 +34,10 @@ export default function About() {
             </a>
           </div>
           <div className="about-cards">
-            <AboutCard delay={1} emoji="🇮🇳→🇺🇸" title="Background" text="Hyderabad, India to Jersey City, NJ. Built software across two continents." />
-            <AboutCard delay={2} emoji="🎓" title="Education" text="M.Sc. Computer Science · NJIT, 3.9 GPA. B.E. CS · JNTU Hyderabad." />
-            <AboutCard delay={3} emoji="⚡" title="Focus" text="End-to-end AI products. From LLM pipeline to production deploy." />
-            <AboutCard delay={4} emoji="🔭" title="Exploring" text="Agentic AI, Model Context Protocol, and LLM orchestration patterns." />
+            <AboutCard delay={1} emoji="✈️" title="Background" text="Hyderabad, India to Jersey City, NJ. Software built across two continents." />
+            <AboutCard delay={2} emoji="🎓" title="Education" text="M.Sc. CS · NJIT, 3.9 GPA. B.E. CS · JNTU Hyderabad." />
+            <AboutCard delay={3} emoji="⚡" title="Focus" text="End-to-end AI products. LLM pipeline to production deploy." />
+            <AboutCard delay={4} emoji="🔭" title="Exploring" text="Agentic AI, Model Context Protocol, LLM orchestration." />
           </div>
         </div>
       </div>
