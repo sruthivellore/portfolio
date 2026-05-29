@@ -182,7 +182,7 @@ export const DATA = {
       gpa: '8.0 / 10',
       flag: '📚',
       location: 'Hyderabad, India',
-      courses: ['Design & Analysis of Algorithms', 'Operating Systems', 'Database Management', 'Cryptography & Network Security', 'Data Mining', 'Cloud Computing', 'Web Technologies', 'Compiler Design'],
+      courses: ['Design & Analysis of Algorithms', 'Operating Systems', 'Object-Oriented Programming', 'Cryptography & Network Security', 'Data Mining', 'Computer Networks', 'Formal Languages & Automata', 'Compiler Design'],
     },
   ],
 
