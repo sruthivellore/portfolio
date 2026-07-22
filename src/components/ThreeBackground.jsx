@@ -37,11 +37,12 @@ export default function ThreeBackground() {
     // Respect an explicit accessibility preference, always.
     if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
 
-    // WebGL is heavy on phones; canvas 2D variants are fine there.
-    const small = window.matchMedia?.('(max-width: 820px)').matches
-    const key = small && variant === 'wireframe' ? 'constellation' : variant
+    // No canvas animation on phones: the per-frame cost (O(n^2) link
+    // checks, shadowBlur glow, WebGL) drains battery and stutters on
+    // mid-range devices. The CSS gradient blobs remain as the backdrop.
+    if (window.matchMedia?.('(max-width: 820px)').matches) return
 
-    const run = VARIANTS[key]?.run
+    const run = VARIANTS[variant]?.run
     if (!run) return
 
     const cleanup = run(mount)
