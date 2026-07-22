@@ -1,5 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import BootSequence from './components/BootSequence'
+import Assistant from './components/Assistant'
 import About from './components/About'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
@@ -11,7 +13,7 @@ export const DATA = {
   name: 'Hemanth Sruthi Vellore',
   shortName: 'Sruthi',
   title: 'Full-Stack Software Engineer',
-  tagline: 'Building complete AI-powered products — from concept to production.',
+  tagline: 'Building complete AI-powered products, from concept to production.',
   email: 'sruthivellore99@gmail.com',
   phone: '848-213-7659',
   location: 'Jersey City, NJ',
@@ -19,12 +21,12 @@ export const DATA = {
   github: 'https://github.com/sruthivellore',
 
   skills: [
-    { category: 'Languages',        icon: '{ }', color: '#38bdf8', items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C', 'SQL', 'Shell scripting'] },
-    { category: 'Frameworks',       icon: '⚛',   color: '#34d399', items: ['React', 'Node.js', 'Spring Boot', 'Gradio', 'Material-UI', 'REST'] },
-    { category: 'AI / ML',          icon: '🤖',  color: '#a78bfa', items: ['LLM Orchestration', 'Prompt Engineering', 'Agentic AI', 'MCP', 'OpenAI Whisper', 'Intent Classification'] },
-    { category: 'Databases',        icon: '🗄',  color: '#fb923c', items: ['MongoDB', 'MySQL', 'PostgreSQL', 'Redis', 'Oracle', 'Hyperledger Fabric'] },
-    { category: 'Cloud & DevOps',   icon: '☁',  color: '#22d3ee', items: ['AWS', 'GCP', 'Docker', 'GitLab CI/CD', 'Jenkins', 'Trivy'] },
-    { category: 'Integrations',     icon: '🔌',  color: '#f472b6', items: ['Gmail API', 'Google Calendar', 'Zoom API', 'OAuth 2.0', 'Figma API', 'Jira API'] },
+    { category: 'Languages',        icon: '{ }', color: '#8b7cf6', items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C', 'SQL', 'Shell scripting'] },
+    { category: 'Frameworks',       icon: '⚛',   color: '#4ad8ff', items: ['React', 'Node.js', 'Spring Boot', 'Gradio', 'Material-UI', 'REST'] },
+    { category: 'AI / ML',          icon: '🤖',  color: '#8b7cf6', items: ['LLM Orchestration', 'Prompt Engineering', 'Agentic AI', 'MCP', 'OpenAI Whisper', 'Intent Classification'] },
+    { category: 'Databases',        icon: '🗄',  color: '#4ad8ff', items: ['MongoDB', 'MySQL', 'PostgreSQL', 'Redis', 'Oracle', 'Hyperledger Fabric'] },
+    { category: 'Cloud & DevOps',   icon: '☁',  color: '#8b7cf6', items: ['AWS', 'GCP', 'Docker', 'GitLab CI/CD', 'Jenkins', 'Trivy'] },
+    { category: 'Integrations',     icon: '🔌',  color: '#4ad8ff', items: ['Gmail API', 'Google Calendar', 'Zoom API', 'OAuth 2.0', 'Figma API', 'Jira API'] },
   ],
 
   experience: [
@@ -35,11 +37,13 @@ export const DATA = {
       location: 'Boca Raton, FL',
       current: true,
       highlights: [
-        'Built DevAssist: project-agnostic AI pipeline (Jira + Figma to conformant code) with confidence gating, prompt caching, and LLM fallback, cutting feature setup from hours to ~5 min',
+        'Built the PBX call-queue platform: queue and agent-status APIs, signed webhook event contract for the full call lifecycle, and reliable abandon/missed-call detection, validated end to end with live call testing',
+        'Shipped tenant-scoped RBAC with a per-verb permission matrix powering the admin Control Center, plus phone-number provisioning with clean tenant/client/campaign ownership synced to the PBX',
+        'Delivered OAuth 2.0 email integrations (Microsoft 365, Google Workspace, Gmail) and org-level campaign management with full lifecycle actions',
+        'Built DevAssist: project-agnostic AI pipeline (Jira + Figma to conformant code) with prompt caching and LLM fallback, cutting feature setup from hours to ~5 min',
         'Replaced 100% manual EC2 deployments with GitLab CI/CD across 4 environments; added Gitleaks, ESLint, Trivy gates; migrated frontend to AWS S3 + CloudFront',
-        'Contributed to containerized case management platform with React, Node.js, MongoDB, Hyperledger Fabric via Docker Compose + Jenkins',
       ],
-      tech: ['GitLab CI', 'React', 'Node.js', 'MongoDB', 'Docker', 'AWS', 'Jira API', 'Figma API'],
+      tech: ['Python', 'Node.js', 'FreeSWITCH', 'Twilio', 'GitLab CI', 'React', 'MongoDB', 'Docker', 'AWS'],
     },
     {
       company: 'Cognida.ai',
@@ -97,7 +101,7 @@ export const DATA = {
       description: 'Full-stack platform integrating Gmail & Google Calendar. Read, compose, send, reply, and AI-draft emails; create meetings with Meet links; transcribe and summarize notes; extract tasks, all with a multi-provider AI backend (OpenAI, Gemini, Groq) and AES-256-GCM key storage.',
       tech: ['React 18', 'Node.js', 'MongoDB', 'Docker', 'AWS ECR', 'GitLab CI'],
       github: 'https://github.com/sruthivellore',
-      color: '#7c3aed',
+      color: '#8b7cf6',
     },
     {
       name: 'DevAssist',
@@ -105,15 +109,15 @@ export const DATA = {
       description: 'Production-grade GitLab CI pipeline: reads Jira + Figma, generates project-conformant code with confidence gating, prompt caching, delta detection, and LLM fallback. Auto-creates feature branch and posts Jira summary in ~5 min.',
       tech: ['GitLab CI', 'Node.js', 'Jira API', 'Figma API', 'LLM', 'Docker'],
       github: null,
-      color: '#ec4899',
+      color: '#4ad8ff',
     },
     {
       name: 'YoGo Social',
-      subtitle: 'Capstone — Serverless Event Platform',
+      subtitle: 'Capstone · Serverless Event Platform',
       description: 'Led 4-person team to deliver government-grade AWS serverless backend (Lambda, DynamoDB, AppSync/GraphQL, Cognito). 96% sprint completion, 1.8% defect rate, OWASP Top 10 compliant, 150+ concurrent DynamoDB writes at 0% throttle.',
       tech: ['AWS Lambda', 'DynamoDB', 'GraphQL', 'Cognito', 'TypeScript'],
       github: null,
-      color: '#06b6d4',
+      color: '#8b7cf6',
     },
     {
       name: 'PHP Dataset Pipeline',
@@ -121,7 +125,7 @@ export const DATA = {
       description: '3-phase pipeline generating PHP instruction-response datasets from 30K+ Hugging Face snippets. Tree-sitter + PHPStan filtering to 265 seeds; StarCoder via vLLM with 2000+ batched requests achieving 82.36% syntax validity.',
       tech: ['StarCoder', 'vLLM', 'Tree-sitter', 'PHPStan', 'Python'],
       github: 'https://github.com/sruthivellore',
-      color: '#10b981',
+      color: '#4ad8ff',
     },
     {
       name: 'Driver License Extraction',
@@ -129,7 +133,7 @@ export const DATA = {
       description: 'Two-EC2 AWS pipeline: face detection via Rekognition on EC2-A, SQS FIFO coordination, structured text extraction via Textract on EC2-B. Supports parallel batch processing from S3.',
       tech: ['Java', 'AWS Rekognition', 'Textract', 'SQS FIFO', 'S3'],
       github: 'https://github.com/sruthivellore/DriverLicenseDetailsExtraction',
-      color: '#f59e0b',
+      color: '#8b7cf6',
     },
     {
       name: 'Hand Gesture Mouse',
@@ -137,7 +141,7 @@ export const DATA = {
       description: 'Real-time virtual mouse using webcam hand tracking. Replaces physical mouse with two gestures: index finger raised moves the cursor, index + middle fingers pinched triggers a click. Built with OpenCV and MediaPipe.',
       tech: ['Python', 'OpenCV', 'MediaPipe', 'NumPy'],
       github: 'https://github.com/sruthivellore/Real-Time-Hand-Gesture-Recognition-for-Mouse-Control',
-      color: '#8b5cf6',
+      color: '#4ad8ff',
     },
     {
       name: 'CineCrate',
@@ -145,7 +149,7 @@ export const DATA = {
       description: 'Movie rental web app with real-time catalog from TMDB API, advanced search and filtering by genre/year/rating, user authentication, rental and return workflows, and a REST API backend. Deployed on Render with PostgreSQL.',
       tech: ['Django', 'PostgreSQL', 'REST API', 'TMDB API', 'Bootstrap'],
       github: 'https://github.com/sruthivellore/CineCrate',
-      color: '#0ea5e9',
+      color: '#8b7cf6',
     },
     {
       name: 'Handwritten Character Recognition',
@@ -153,7 +157,7 @@ export const DATA = {
       description: 'OCR system recognizing handwritten English characters (A-Z, a-z, 0-9) using ANN and CNN on the EMNIST dataset (814K images, 62 classes). ANN achieved 85.2% test accuracy; CNN model trained with TensorFlow/Keras.',
       tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'NumPy'],
       github: 'https://github.com/sruthivellore/HCR-Using-ANN',
-      color: '#14b8a6',
+      color: '#4ad8ff',
     },
     {
       name: 'Energy Consumption Forecasting',
@@ -161,7 +165,7 @@ export const DATA = {
       description: 'Distributed energy consumption forecasting on Apache Spark (AWS EMR) using Gradient Boosted Tree regression. Containerized with Docker for reproducible deployment across environments.',
       tech: ['Apache Spark', 'AWS EMR', 'GBT Regression', 'Docker', 'Python'],
       github: 'https://github.com/sruthivellore/EnergyPredictSparkAWS',
-      color: '#f97316',
+      color: '#8b7cf6',
     },
   ],
 
@@ -195,6 +199,7 @@ export const DATA = {
 export default function App() {
   return (
     <>
+      <BootSequence />
       <div className="blobs">
         <div className="blob blob-1" />
         <div className="blob blob-2" />
@@ -210,6 +215,7 @@ export default function App() {
         <EducationAwards />
       </main>
       <Footer />
+      <Assistant />
     </>
   )
 }

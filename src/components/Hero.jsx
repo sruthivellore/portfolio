@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { DATA } from '../App'
-import { useCountUp } from '../hooks/useCountUp'
+import ThreeBackground from './ThreeBackground'
 
 export default function Hero() {
   const [copied, setCopied] = useState(false)
@@ -24,6 +24,7 @@ export default function Hero() {
 
   return (
     <section id="hero">
+      <ThreeBackground />
       <div className="container">
         <div className="hero-inner">
           <div>
@@ -31,8 +32,15 @@ export default function Hero() {
               <span className="hero-badge-dot" />
               Currently building at Circle Software
             </div>
-            <h1 className="hero-name">{DATA.shortName}<br />Vellore</h1>
+            <p className="hero-greeting">Hello, I'm</p>
+            <h1 className="hero-name">
+              {DATA.shortName}<br />
+              <span className="glitch" data-text="Vellore">Vellore</span>
+            </h1>
             <p className="hero-title">{DATA.title}</p>
+            <div className="hero-typing">
+              <TypingText /><span className="type-cursor" />
+            </div>
             <p className="hero-desc">
               Building complete AI-powered products from concept to production.
               3+ years shipping full-stack applications, agentic pipelines, and cloud-native systems.
@@ -76,48 +84,49 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hero-visual">
-            <div className="hero-card-big">
-              <div className="code-header">
-                <span className="code-dot dot-red" />
-                <span className="code-dot dot-yellow" />
-                <span className="code-dot dot-green" />
-              </div>
-              <pre
-                className="hero-code"
-                dangerouslySetInnerHTML={{ __html:
-`<span class="cm">// what drives me</span>
-<span class="kw">const</span> <span class="fn">passion</span> = {
-  mission:    <span class="str">"turn ideas into shipped products"</span>,
-  approach:   [<span class="str">"design"</span>, <span class="str">"build"</span>, <span class="str">"deploy"</span>, <span class="str">"repeat"</span>],
-  superpower: <span class="str">"AI + full-stack in one person"</span>,
-  exploring:  [<span class="str">"LLMs"</span>, <span class="str">"agentic AI"</span>, <span class="str">"MCP"</span>],
-  currentlyAt:<span class="str">"Circle Software"</span>,
-}`
-                }}
-              />
-            </div>
-            <div className="hero-card-row">
-              <StatCard target={3} suffix="+" label="Years experience" />
-              <StatCard target={3.9} suffix="" label="M.Sc. GPA · NJIT" />
-            </div>
-            <div className="hero-card-row">
-              <StatCard target={10} suffix="+" label="AI integrations" />
-              <StatCard target={1} suffix="k+" label="Hours automated" />
-            </div>
-          </div>
         </div>
       </div>
     </section>
   )
 }
 
-function StatCard({ target, suffix, label }) {
-  const { ref, display } = useCountUp(target, suffix)
-  return (
-    <div ref={ref} className="hero-card-sm">
-      <div className="hero-stat">{display}</div>
-      <div className="hero-stat-label">{label}</div>
-    </div>
-  )
+const PHRASES = [
+  'Distributed Backend Systems',
+  'Real-Time Data Pipelines',
+  'GenAI & LLM Engineering',
+  'Cloud Infrastructure & CI/CD',
+  'Full-Stack Product Delivery',
+]
+
+function TypingText() {
+  const [text, setText] = useState('')
+  const state = useRef({ phrase: 0, char: 0, deleting: false })
+  const timer = useRef(null)
+
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      setText(PHRASES[0])
+      return
+    }
+    const tick = () => {
+      const s = state.current
+      const current = PHRASES[s.phrase]
+      if (s.deleting) { s.char--; } else { s.char++; }
+      setText(current.substring(0, s.char))
+
+      let delay = s.deleting ? 30 : 60
+      if (!s.deleting && s.char === current.length) { delay = 2000; s.deleting = true }
+      else if (s.deleting && s.char === 0) {
+        s.deleting = false
+        s.phrase = (s.phrase + 1) % PHRASES.length
+        delay = 500
+      }
+      timer.current = setTimeout(tick, delay)
+    }
+    timer.current = setTimeout(tick, 600)
+    return () => clearTimeout(timer.current)
+  }, [])
+
+  return <span>{text}</span>
 }
+

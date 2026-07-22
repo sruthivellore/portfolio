@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { useCountUp } from '../hooks/useCountUp'
 import { DATA } from '../App'
 
 export default function About() {
@@ -18,26 +19,28 @@ export default function About() {
     <section id="about">
       <div className="container">
         <div ref={ref} className="reveal">
-          <span className="section-label">About Me</span>
-          <h2 className="section-title">A little <span className="gradient-text">about me</span></h2>
+          <span className="section-label">Who am I</span>
+          <h2 className="section-title">Who <span className="gradient-text">am I</span></h2>
         </div>
         <div className="about-grid">
           <div className="about-text reveal" ref={useScrollReveal()}>
             <p>
-              Originally from Hyderabad, India, I moved to the US for my Master's in CS at NJIT and
-              never looked back. Before that, three years at Hitachi Vantara shipping enterprise software,
-              leading automation teams, and getting comfortable with production-grade systems at scale.
+              I'm a software engineer who covers the whole stack of a problem: the distributed backend,
+              the data pipeline feeding it, the cloud it runs on, and increasingly the AI layer on top.
+              Four years in, that range is the thing I'd point at first.
             </p>
             <p>
-              What gets me out of bed is building things that actually work in the real world. Not
-              prototypes. Full products, with CI/CD, security gates, observability, and a real user at
-              the end of it. That's why I gravitate toward AI tooling: the gap between a cool demo and
-              something reliable is exactly where the interesting engineering happens.
+              Right now at Circle Software I'm building a call-center platform: queue and agent-status
+              APIs, a signed webhook contract covering the full call lifecycle, and multi-tenant access
+              control enforced per action across the backend. Before that, three years at Hitachi Vantara
+              tuning APIs under concurrent load and leading an automation team that cut 1000+ hours of
+              manual work a year, then an M.Sc. in CS at NJIT.
             </p>
             <p>
-              Always curious about what's next in agentic AI and the Model Context Protocol.
-              When I'm not shipping at Circle Software, I'm building personal tools and exploring
-              what LLMs can do when you go past the demo.
+              The part I care about is the distance between a demo and something you can actually run.
+              Retries, auth, failure modes, CI/CD, the event that arrives twice or never. I like AI work
+              for exactly that reason: the models are the easy part, and making them dependable is where
+              the real engineering lives.
             </p>
             <button onClick={handleTalk} className={`btn about-cta ${copied ? 'contact-copied' : 'btn-primary'}`}>
               {copied ? (
@@ -53,11 +56,36 @@ export default function About() {
               )}
             </button>
           </div>
-          <div className="about-cards">
-            <AboutCard delay={1} emoji="✈️" title="Background" text="Hyderabad, India to Jersey City, NJ. Software built across two continents." />
-            <AboutCard delay={2} emoji="🎓" title="Education" text="M.Sc. CS · NJIT, 3.9 GPA. B.E. CS · JNTU Hyderabad." />
-            <AboutCard delay={3} emoji="⚡" title="Focus" text="End-to-end AI products. LLM pipeline to production deploy." />
-            <AboutCard delay={4} emoji="🔭" title="Exploring" text="Agentic AI, Model Context Protocol, LLM orchestration." />
+
+          <div className="about-visual reveal" ref={useScrollReveal()}>
+            <div className="hero-card-big">
+              <div className="code-header">
+                <span className="code-dot dot-red" />
+                <span className="code-dot dot-yellow" />
+                <span className="code-dot dot-green" />
+              </div>
+              <pre
+                className="hero-code"
+                dangerouslySetInnerHTML={{ __html:
+`<span class="cm">// what drives me</span>
+<span class="kw">const</span> <span class="fn">passion</span> = {
+  mission:    <span class="str">"turn ideas into shipped products"</span>,
+  approach:   [<span class="str">"design"</span>, <span class="str">"build"</span>, <span class="str">"deploy"</span>, <span class="str">"repeat"</span>],
+  superpower: <span class="str">"AI + full-stack in one person"</span>,
+  exploring:  [<span class="str">"LLMs"</span>, <span class="str">"agentic AI"</span>, <span class="str">"MCP"</span>],
+  currentlyAt:<span class="str">"Circle Software"</span>,
+}`
+                }}
+              />
+            </div>
+            <div className="hero-card-row">
+              <StatCard target={3} suffix="+" label="Years experience" />
+              <StatCard target={3.9} suffix="" label="M.Sc. GPA · NJIT" />
+            </div>
+            <div className="hero-card-row">
+              <StatCard target={10} suffix="+" label="AI integrations" />
+              <StatCard target={1} suffix="k+" label="Hours automated" />
+            </div>
           </div>
         </div>
       </div>
@@ -65,13 +93,12 @@ export default function About() {
   )
 }
 
-function AboutCard({ emoji, title, text, delay }) {
-  const ref = useScrollReveal()
+function StatCard({ target, suffix, label }) {
+  const { ref, display } = useCountUp(target, suffix)
   return (
-    <div ref={ref} className={`about-card glass-card reveal reveal-delay-${delay}`}>
-      <span className="about-card-emoji">{emoji}</span>
-      <div className="about-card-title">{title}</div>
-      <div className="about-card-text">{text}</div>
+    <div ref={ref} className="hero-card-sm">
+      <div className="hero-stat">{display}</div>
+      <div className="hero-stat-label">{label}</div>
     </div>
   )
 }
