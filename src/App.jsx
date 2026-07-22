@@ -22,11 +22,11 @@ export const DATA = {
 
   skills: [
     { category: 'Languages',        icon: '{ }', color: '#8b7cf6', items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C', 'SQL', 'Shell scripting'] },
-    { category: 'Frameworks',       icon: '⚛',   color: '#4ad8ff', items: ['React', 'Node.js', 'Spring Boot', 'Gradio', 'Material-UI', 'REST'] },
+    { category: 'Frameworks',       icon: '⚛',   color: '#4ad8ff', items: ['React', 'Node.js', 'Express', 'FastAPI', 'Spring Boot', 'Material-UI', 'Redux'] },
     { category: 'AI / ML',          icon: '🤖',  color: '#8b7cf6', items: ['LLM Orchestration', 'Prompt Engineering', 'Agentic AI', 'MCP', 'OpenAI Whisper', 'Intent Classification'] },
     { category: 'Databases',        icon: '🗄',  color: '#4ad8ff', items: ['MongoDB', 'MySQL', 'PostgreSQL', 'Redis', 'Oracle', 'Hyperledger Fabric'] },
     { category: 'Cloud & DevOps',   icon: '☁',  color: '#8b7cf6', items: ['AWS', 'GCP', 'Docker', 'GitLab CI/CD', 'Jenkins', 'Trivy'] },
-    { category: 'Integrations',     icon: '🔌',  color: '#4ad8ff', items: ['Gmail API', 'Google Calendar', 'Zoom API', 'OAuth 2.0', 'Figma API', 'Jira API'] },
+    { category: 'Integrations',     icon: '🔌',  color: '#4ad8ff', items: ['FreeSWITCH', 'Twilio', 'socket.io', 'OAuth 2.0', 'Microsoft 365', 'Figma API', 'Jira API'] },
   ],
 
   experience: [
@@ -37,13 +37,14 @@ export const DATA = {
       location: 'Boca Raton, FL',
       current: true,
       highlights: [
-        'Built the PBX call-queue platform: queue and agent-status APIs, signed webhook event contract for the full call lifecycle, and reliable abandon/missed-call detection, validated end to end with live call testing',
-        'Shipped tenant-scoped RBAC with a per-verb permission matrix powering the admin Control Center, plus phone-number provisioning with clean tenant/client/campaign ownership synced to the PBX',
-        'Delivered OAuth 2.0 email integrations (Microsoft 365, Google Workspace, Gmail) and org-level campaign management with full lifecycle actions',
+        'Telephony (Python/FastAPI, FreeSWITCH): extended an existing PBX service with call-queue and agent-status APIs, and hardened its event pipeline into a reliable contract for the backend, covering hold, transfer and call-outcome tracking across concurrent calls; added Twilio number provisioning scoped per tenant',
+        'Backend (Node.js/TypeScript/MongoDB): shipped multi-tenant access control with per-action authorization enforced server-side, plus account and role management with tenant-scoped deletion, two-factor authentication, and single-use password-reset links',
+        'Integrations: OAuth 2.0 email across Microsoft 365, Google Workspace and Gmail, and org-level campaign management with full lifecycle actions',
+        'Frontend (React/MUI): built the admin console with permission-gated user and role administration, customer and campaign management, and account settings flows, using MUI DataGrid, Formik and Redux',
+        'CI/CD: replaced 100% manual deploys with a 9-stage pipeline shared across frontend and backend, covering secret detection, code quality, AI-assisted review, vulnerability scanning, versioned image builds to ECR, gated multi-environment deploys and health checks',
         'Built DevAssist: project-agnostic AI pipeline (Jira + Figma to conformant code) with prompt caching and LLM fallback, cutting feature setup from hours to ~5 min',
-        'Replaced 100% manual EC2 deployments with GitLab CI/CD across 4 environments; added Gitleaks, ESLint, Trivy gates; migrated frontend to AWS S3 + CloudFront',
       ],
-      tech: ['Python', 'Node.js', 'FreeSWITCH', 'Twilio', 'GitLab CI', 'React', 'MongoDB', 'Docker', 'AWS'],
+      tech: ['Python', 'FastAPI', 'Node.js', 'TypeScript', 'React', 'MongoDB', 'PostgreSQL', 'FreeSWITCH', 'Twilio', 'Docker', 'AWS'],
     },
     {
       company: 'Cognida.ai',
@@ -69,7 +70,7 @@ export const DATA = {
           period: 'Nov 2022 – Dec 2023',
           highlights: [
             'Owned backend API development and authentication using Redis and MySQL; responsible for query optimization and system reliability under peak load',
-            'Led in-house automation team; responsible for SAP system monitoring, alert pipelines, and eliminating 1000+ hrs/yr of manual operational work',
+            'Led the in-house automation team: replaced daily manual per-system logins with a scheduled Python/VBScript job that SSHes into every SAP system, runs health and query checks unattended, and raises email and Slack alerts only on anomalies, removing 1000+ hrs/yr of manual work and surfacing failures without someone having to go looking',
           ],
         },
         {

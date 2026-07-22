@@ -30,11 +30,12 @@ export default function About() {
               Four years in, that range is the thing I'd point at first.
             </p>
             <p>
-              Right now at Circle Software I'm building a call-center platform: queue and agent-status
-              APIs, a signed webhook contract covering the full call lifecycle, and multi-tenant access
-              control enforced per action across the backend. Before that, three years at Hitachi Vantara
-              tuning APIs under concurrent load and leading an automation team that cut 1000+ hours of
-              manual work a year, then an M.Sc. in CS at NJIT.
+              Right now at Circle Software I work across all three tiers of a cloud call-center platform:
+              a Python telephony service driving the softswitch, a Node and TypeScript API on MongoDB,
+              and the React admin console on top. I also replaced our manual deploys with a nine-stage
+              CI/CD pipeline. Before that, three years at Hitachi Vantara tuning APIs under concurrent
+              load and leading an automation team that cut 1000+ hours of manual work a year, then an
+              M.Sc. in CS at NJIT.
             </p>
             <p>
               The part I care about is the distance between a demo and something you can actually run.
