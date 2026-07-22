@@ -25,23 +25,27 @@ export default function About() {
         <div className="about-grid">
           <div className="about-text reveal" ref={useScrollReveal()}>
             <p>
-              I'm a software engineer who covers the whole stack of a problem: the distributed backend,
-              the data pipeline feeding it, the cloud it runs on, and increasingly the AI layer on top.
-              Four years in, that range is the thing I'd point at first.
+              I'm a full-stack engineer with 4+ years across backend services, real-time systems, cloud
+              infrastructure, and applied AI. At Circle Software I work across all three tiers of a
+              multi-tenant CRM and contact-center platform: a Python/FastAPI telephony service driving
+              FreeSWITCH, a Node and TypeScript API on MongoDB, and the React admin console on top. I
+              own multi-tenant access control with per-action authorization enforced server-side, the
+              call-event contract the product backend builds against, and the 9-stage CI/CD pipeline
+              that replaced 100% manual deploys.
             </p>
             <p>
-              Right now at Circle Software I work across all three tiers of a cloud call-center platform:
-              a Python telephony service driving the softswitch, a Node and TypeScript API on MongoDB,
-              and the React admin console on top. I also replaced our manual deploys with a nine-stage
-              CI/CD pipeline. Before that, three years at Hitachi Vantara tuning APIs under concurrent
-              load and leading an automation team that cut 1000+ hours of manual work a year, then an
-              M.Sc. in CS at NJIT.
+              Before that, three years at Hitachi Vantara building multi-threaded REST APIs on Redis and
+              MySQL, migrating an entire React codebase to Hooks and TypeScript, and leading the in-house
+              automation team that replaced daily manual SAP checks with a scheduled job, removing 1000+
+              hours of manual work a year. Earlier, a Java digital twin streaming fleet telemetry to GCP
+              IoT Core with a BigQuery and Dataflow analytics pipeline behind it. M.Sc. in Computer
+              Science from NJIT (3.9 GPA), two Hitachi performance awards.
             </p>
             <p>
-              The part I care about is the distance between a demo and something you can actually run.
-              Retries, auth, failure modes, CI/CD, the event that arrives twice or never. I like AI work
-              for exactly that reason: the models are the easy part, and making them dependable is where
-              the real engineering lives.
+              Outside the day job I build the same way. MemoMate, an AI productivity platform with a
+              multi-provider LLM backend; DevAssist, a pipeline that turns a Jira ticket and Figma design
+              into scaffolded code in about 5 minutes; and a 4-person capstone backend on AWS serverless
+              that shipped 3 sprints at a 1.8% defect rate.
             </p>
             <button onClick={handleTalk} className={`btn about-cta ${copied ? 'contact-copied' : 'btn-primary'}`}>
               {copied ? (

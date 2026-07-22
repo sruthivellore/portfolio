@@ -49,7 +49,7 @@ export const DATA = {
     {
       company: 'Cognida.ai',
       role: 'AI Intern',
-      period: 'Jun 2025 – Sep 2025',
+      period: 'Jun 2025 – Aug 2025',
       location: 'USA',
       current: false,
       highlights: [
@@ -67,7 +67,7 @@ export const DATA = {
       progression: [
         {
           role: 'Software Engineer II',
-          period: 'Nov 2022 – Dec 2023',
+          period: 'Jan 2022 – Dec 2023',
           highlights: [
             'Owned backend API development and authentication using Redis and MySQL; responsible for query optimization and system reliability under peak load',
             'Led the in-house automation team: replaced daily manual per-system logins with a scheduled Python/VBScript job that SSHes into every SAP system, runs health and query checks unattended, and raises email and Slack alerts only on anomalies, removing 1000+ hrs/yr of manual work and surfacing failures without someone having to go looking',
@@ -75,7 +75,7 @@ export const DATA = {
         },
         {
           role: 'Software Engineer I',
-          period: 'Nov 2020 – Nov 2022',
+          period: 'Nov 2020 – Jan 2022',
           highlights: [
             'Responsible for frontend codebase across all UI modules; owned migration from class components to React Hooks, TypeScript, and Material-UI v5',
             'Owned and maintained the centralized React component library used as the single source of truth across the application',
